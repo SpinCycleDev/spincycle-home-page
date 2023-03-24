@@ -1,9 +1,10 @@
-const pictureClass = 'max-h-[55vh] h-2/3 sm:h-96 md:h-fit my-10 lg:px-16 px-3 hover:scale-110 transition duration-700'
+// const pictureClass = 'max-h-[750px] lg:max-h-1/2 h-3/4 sm:h-96 md:h-2/3 lg:h-1/2 lg:px-10 lg:py-10 hover:scale-110 transition duration-700'
+const pictureClass = 'w-3/5 lg:w-[80%] py-20 lg:py-0 hover:scale-110 transition duration-700'
 
-const ThreeColumnsWithPictures = (props) => {
+const ThreeColumnsWithPictures = ( props ) => {
 
   return(
-    <div className={`grid ${props.breakpoint ? props.breakpoint : 'sm:grid-cols-3'} grid-cols-1 mx-5 text-center place-items-center mb-auto font-vollkorn`}>
+    <div className={`grid ${props.breakpoint ? props.breakpoint : 'sm:grid-cols-3'} grid-cols-1 mx-5 text-center place-items-center mb-auto font-vollkorn h-fit`}>
 
       <img 
         className={pictureClass} 
@@ -11,10 +12,12 @@ const ThreeColumnsWithPictures = (props) => {
         alt={props.picture1.alt} 
       />
 
-      {props.children}
+        <div className="lg:mt-10">
+          {props.children}
+        </div>
 
       <img 
-        className={pictureClass}
+        className={`${pictureClass} mb-20 lg:mb-0`}
         src={props.picture2.pic} 
         alt={props.picture1.alt} 
       />
